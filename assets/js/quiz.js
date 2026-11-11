@@ -174,7 +174,11 @@
   });
 
   var printBtn = document.getElementById("print-btn");
-  if (printBtn) printBtn.addEventListener("click", function () { window.print(); });
+  var details = document.getElementById("survey-details");
+  if (printBtn) printBtn.addEventListener("click", function () { if (details) details.open = true; window.print(); });
+  window.addEventListener("beforeprint", function () { if (details) details.open = true; });
+  if (details && location.hash === "#survey-list") details.open = true;
+  document.querySelectorAll('a[href="#survey-list"]').forEach(function (a) { a.addEventListener("click", function () { if (details) details.open = true; }); });
 
   build();
 })();
