@@ -47,202 +47,224 @@
   <div class="wrap">
     <span class="kicker">Before, during and after</span>
     <h1>The meal, step by step.</h1>
-    <p class="lead">Seven moments where a good impression is made or lost, with what to do at each one.</p>
+    <p class="lead">Seven scenes. Tap a number, use the arrows or swipe.</p>
   </div>
 </section>
 
-<nav class="rail-sticky" aria-label="Meal steps">
-  <div class="wrap">
-    <ol class="rail" id="step-rail">
-      <li><a href="#before">Before</a></li>
-      <li><a href="#arrival">Arrival</a></li>
-      <li><a href="#ordering">Ordering</a></li>
-      <li><a href="#eating">Eating</a></li>
-      <li><a href="#conversation">Conversation</a></li>
-      <li><a href="#paying">Paying</a></li>
-      <li><a href="#thanks">Thank-you</a></li>
+<section class="section" aria-label="Meal scenes">
+  <div class="wrap player" id="player">
+    <ol class="player-tabs" role="tablist" aria-label="Meal steps">
+      <li class="bar" id="ptab-bar" role="presentation" aria-hidden="true"></li>
+      <li role="presentation"><button class="ptab" role="tab" type="button" id="tab-before" aria-controls="before" aria-selected="true"><span class="ptab-dot">1</span><span class="ptab-label">Before</span></button></li>
+      <li role="presentation"><button class="ptab" role="tab" type="button" id="tab-arrival" aria-controls="arrival" aria-selected="false" tabindex="-1"><span class="ptab-dot">2</span><span class="ptab-label">Arrival</span></button></li>
+      <li role="presentation"><button class="ptab" role="tab" type="button" id="tab-ordering" aria-controls="ordering" aria-selected="false" tabindex="-1"><span class="ptab-dot">3</span><span class="ptab-label">Ordering</span></button></li>
+      <li role="presentation"><button class="ptab" role="tab" type="button" id="tab-eating" aria-controls="eating" aria-selected="false" tabindex="-1"><span class="ptab-dot">4</span><span class="ptab-label">Eating</span></button></li>
+      <li role="presentation"><button class="ptab" role="tab" type="button" id="tab-conversation" aria-controls="conversation" aria-selected="false" tabindex="-1"><span class="ptab-dot">5</span><span class="ptab-label">Talk</span></button></li>
+      <li role="presentation"><button class="ptab" role="tab" type="button" id="tab-paying" aria-controls="paying" aria-selected="false" tabindex="-1"><span class="ptab-dot">6</span><span class="ptab-label">Paying</span></button></li>
+      <li role="presentation"><button class="ptab" role="tab" type="button" id="tab-thanks" aria-controls="thanks" aria-selected="false" tabindex="-1"><span class="ptab-dot">7</span><span class="ptab-label">Thank-you</span></button></li>
     </ol>
+
+    <!-- 1 BEFORE -->
+    <div class="scene" role="tabpanel" id="before" aria-labelledby="tab-before" tabindex="0">
+      <svg class="scene-art" viewBox="0 0 400 260" role="img" aria-label="Animated calendar with a date being checked off and an RSVP envelope flying in">
+        <rect x="70" y="40" width="200" height="180" rx="10" fill="#fff" stroke="#6b1e2e" stroke-width="3"/>
+        <path d="M70 84h200" stroke="#6b1e2e" stroke-width="3"/><rect x="70" y="40" width="200" height="44" rx="10" fill="#6b1e2e"/>
+        <path d="M110 28v26M230 28v26" stroke="#521624" stroke-width="6" stroke-linecap="round"/>
+        <g fill="#e8dbc3"><rect x="92" y="104" width="30" height="24" rx="3"/><rect x="138" y="104" width="30" height="24" rx="3"/><rect x="184" y="104" width="30" height="24" rx="3"/><rect x="230" y="104" width="22" height="24" rx="3"/><rect x="92" y="144" width="30" height="24" rx="3"/><rect x="138" y="144" width="30" height="24" rx="3"/><rect x="92" y="184" width="30" height="24" rx="3"/></g>
+        <circle cx="199" cy="166" r="24" fill="#f3e6e8" stroke="#6b1e2e" stroke-width="3"/>
+        <path class="s-draw-loop" pathLength="1" d="M187 166l9 9 16-18" fill="none" stroke="#6b1e2e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="s-fly">
+          <rect x="280" y="120" width="90" height="60" rx="4" fill="#fbf7f0" stroke="#b08d57" stroke-width="3"/>
+          <path d="M280 124l45 30 45-30" fill="none" stroke="#b08d57" stroke-width="3"/>
+          <text x="325" y="172" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="700" font-size="14" fill="#6b1e2e">RSVP</text>
+        </g>
+      </svg>
+      <div>
+        <h2>Before</h2>
+        <ul class="chips">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5 11-11"/></svg>RSVP within a day</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3l4 3 4-3 5 4-3 4v10H6V11L3 7z"/></svg>Check the dress code</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16v.5"/></svg>Share allergies early</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Preview the menu online</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2 ARRIVAL -->
+    <div class="scene" role="tabpanel" id="arrival" aria-labelledby="tab-arrival" tabindex="0">
+      <svg class="scene-art" viewBox="0 0 400 260" role="img" aria-label="Animated clock ticking toward the hour beside a phone set to silent">
+        <circle cx="150" cy="130" r="100" fill="#fff" stroke="#6b1e2e" stroke-width="4"/>
+        <circle cx="150" cy="130" r="88" fill="none" stroke="#e8dbc3" stroke-width="2" stroke-dasharray="2 12"/>
+        <path d="M150 40a90 90 0 0 0-45 12" fill="none" stroke="#b08d57" stroke-width="12" stroke-linecap="round" opacity=".7"/>
+        <path d="M150 130V78" stroke="#6b1e2e" stroke-width="7" stroke-linecap="round"/>
+        <g class="s-spin" style="transform-origin:150px 130px"><path d="M150 130V50" stroke="#a35a68" stroke-width="4" stroke-linecap="round"/></g>
+        <circle cx="150" cy="130" r="7" fill="#6b1e2e"/>
+        <text x="150" y="250" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="18" fill="#7a5c2e">5–10 min early</text>
+        <g class="s-ring">
+          <rect x="290" y="70" width="64" height="116" rx="12" fill="#2a1a1f"/>
+          <rect x="297" y="82" width="50" height="88" rx="4" fill="#3d0f19"/>
+          <path d="M310 110q12-10 24 0M314 118q8-6 16 0" fill="none" stroke="#e8dbc3" stroke-width="3" stroke-linecap="round"/>
+          <path d="M296 80l52 100" stroke="#b08d57" stroke-width="5" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <div>
+        <h2>Arrival</h2>
+        <ul class="chips">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/></svg>5–10 minutes early</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M3 3l18 18"/></svg>Phone silent and away</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l4-4 5 3 5-3 4 4-6 6-3-2-3 2z"/></svg>Firm handshake, full name</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 21V11h12v10M6 15h12M8 11V4h8v7"/></svg>Wait to be seated</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3 ORDERING -->
+    <div class="scene" role="tabpanel" id="ordering" aria-labelledby="tab-ordering" tabindex="0">
+      <svg class="scene-art" viewBox="0 0 400 260" role="img" aria-label="Animated menu: a mid-priced chicken dish gets circled while spaghetti is crossed out">
+        <rect x="100" y="14" width="200" height="236" rx="4" fill="#fff" stroke="#6b1e2e" stroke-width="3"/>
+        <rect x="110" y="24" width="180" height="216" fill="none" stroke="#b08d57"/>
+        <text x="200" y="56" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="22" fill="#6b1e2e">Menu</text>
+        <g font-family="Source Sans 3, sans-serif" font-size="15" fill="#2a1a1f">
+          <text x="128" y="96">Steak, 16 oz</text><text x="272" y="96" text-anchor="end">$$$$</text>
+          <text x="128" y="136">Spaghetti</text><text x="272" y="136" text-anchor="end">$$</text>
+          <text x="128" y="176">Grilled chicken</text><text x="272" y="176" text-anchor="end">$$</text>
+          <text x="128" y="216">Ribs, full rack</text><text x="272" y="216" text-anchor="end">$$$</text>
+        </g>
+        <path class="s-draw" pathLength="1" d="M122 131h120" stroke="#6b1e2e" stroke-width="3" stroke-linecap="round"/>
+        <path class="s-draw" pathLength="1" style="animation-delay:.8s" d="M122 211h120" stroke="#6b1e2e" stroke-width="3" stroke-linecap="round"/>
+        <ellipse class="s-draw-loop" pathLength="1" cx="198" cy="171" rx="88" ry="20" fill="none" stroke="#b08d57" stroke-width="4"/>
+        <g class="s-bob"><circle cx="340" cy="170" r="22" fill="#6b1e2e"/><path d="M330 170l7 7 13-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g>
+      </svg>
+      <div>
+        <h2>Ordering</h2>
+        <ul class="chips">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5 11-11"/></svg>Mid-priced, easy to eat</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg>Nothing messy</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h10l-1 8a4 4 0 0 1-8 0zM12 15v5M8 21h8"/></svg>Alcohol: host first, max one</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Follow the host's lead</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4 EATING -->
+    <div class="scene" role="tabpanel" id="eating" aria-labelledby="tab-eating" tabindex="0">
+      <svg class="scene-art" viewBox="0 0 400 260" role="img" aria-label="Animated plate with steam; a fork lifts a small bite">
+        <ellipse cx="200" cy="170" rx="150" ry="62" fill="#fff" stroke="#8a6a3c" stroke-width="3"/>
+        <ellipse cx="200" cy="170" rx="104" ry="40" fill="#f3e6e8" stroke="#a35a68" stroke-width="2"/>
+        <ellipse cx="185" cy="164" rx="40" ry="16" fill="#e8dbc3" stroke="#7a5c2e" stroke-width="2"/>
+        <g fill="none" stroke="#a35a68" stroke-width="3" stroke-linecap="round">
+          <path class="s-steam" d="M170 140q-8-14 0-28t0-28"/><path class="s-steam" d="M190 136q-8-14 0-28t0-28"/><path class="s-steam" d="M210 140q-8-14 0-28t0-28"/>
+        </g>
+        <g class="s-lift">
+          <path d="M262 186l40-80" stroke="#6b1e2e" stroke-width="6" stroke-linecap="round"/>
+          <path d="M296 112l14-28M304 116l14-28M312 120l14-28" stroke="#6b1e2e" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="318" cy="96" r="7" fill="#b08d57"/>
+        </g>
+        <path d="M30 120l12 110h-22z" fill="#6b1e2e"/>
+      </svg>
+      <div>
+        <h2>Eating</h2>
+        <ul class="chips">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h14l-3 16H8z"/></svg>Napkin on your lap</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4"/></svg>Wait for the host to start</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Small bites</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14h6l2-3 2 3h6M8 9a4 4 0 0 1 8 0"/></svg>Ask, don't reach</li>
+        </ul>
+        <a class="card-link" href="table.html">Which fork? See the table →</a>
+      </div>
+    </div>
+
+    <!-- 5 CONVERSATION -->
+    <div class="scene" role="tabpanel" id="conversation" aria-labelledby="tab-conversation" tabindex="0">
+      <svg class="scene-art" viewBox="0 0 400 260" role="img" aria-label="Animated speech bubbles appearing back and forth between two people">
+        <circle cx="70" cy="200" r="34" fill="#6b1e2e"/><path d="M30 260a40 40 0 0 1 80 0" fill="#6b1e2e"/>
+        <circle cx="330" cy="200" r="34" fill="#b08d57"/><path d="M290 260a40 40 0 0 1 80 0" fill="#b08d57"/>
+        <g class="s-pop"><path d="M40 40h170v70H90l-24 24v-24H40z" fill="#fff" stroke="#6b1e2e" stroke-width="3" stroke-linejoin="round"/>
+          <text x="125" y="82" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="16" fill="#2a1a1f">How did you start?</text></g>
+        <g class="s-pop2"><path d="M190 90h170v70h-26v24l-24-24H190z" fill="#f3e6e8" stroke="#b08d57" stroke-width="3" stroke-linejoin="round"/>
+          <g class="s-type" fill="#6b1e2e"><circle cx="252" cy="125" r="6"/><circle cx="275" cy="125" r="6"/><circle cx="298" cy="125" r="6"/></g></g>
+      </svg>
+      <div>
+        <h2>Conversation</h2>
+        <ul class="chips">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Host starts business talk</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4M17 12h4M12 6v12"/></svg>Talk to both neighbors</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 15h8M5 5l14 14"/></svg>Never with a full mouth</li>
+        </ul>
+        <a class="card-link" href="#swipe-title">Play: safe topic or skip it? ↓</a>
+      </div>
+    </div>
+
+    <!-- 6 PAYING -->
+    <div class="scene" role="tabpanel" id="paying" aria-labelledby="tab-paying" tabindex="0">
+      <svg class="scene-art" viewBox="0 0 400 260" role="img" aria-label="Animated check folder sliding across the table to the host">
+        <rect x="10" y="190" width="380" height="14" rx="4" fill="#e8dbc3"/>
+        <text x="80" y="240" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="700" font-size="16" fill="#7a5c2e">You</text>
+        <text x="320" y="240" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="700" font-size="16" fill="#6b1e2e">Host</text>
+        <path d="M120 230h160" stroke="#b08d57" stroke-width="2" stroke-dasharray="6 6"/><path d="M272 224l10 6-10 6" fill="none" stroke="#b08d57" stroke-width="2"/>
+        <g class="s-slide">
+          <rect x="40" y="110" width="110" height="78" rx="4" fill="#6b1e2e"/>
+          <path d="M62 70h66v86l-8-6-9 6-8-6-8 6-9-6-8 6-8-6z" fill="#fff" stroke="#521624" stroke-width="2"/>
+          <path d="M74 90h42M74 104h42M74 118h24" stroke="#a35a68" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <div>
+        <h2>Paying</h2>
+        <ul class="chips">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h14M13 6l6 6-6 6"/></svg>Who invites, pays</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg>Don't grab the check</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M16 7H10a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6H8"/></svg>Hosting? Tip 18–20%</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7 THANKS -->
+    <div class="scene" role="tabpanel" id="thanks" aria-labelledby="tab-thanks" tabindex="0">
+      <svg class="scene-art" viewBox="0 0 400 260" role="img" aria-label="Animated thank-you email flying away with a 24-hour badge">
+        <path d="M30 220q90-10 150-60t170-110" fill="none" stroke="#e8dbc3" stroke-width="3" stroke-dasharray="4 10"/>
+        <g class="s-fly" style="animation-duration:3.6s">
+          <rect x="130" y="90" width="150" height="100" rx="6" fill="#fff" stroke="#6b1e2e" stroke-width="3"/>
+          <path d="M130 94l75 52 75-52" fill="none" stroke="#6b1e2e" stroke-width="3"/>
+          <text x="205" y="180" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="16" fill="#6b1e2e">Thank you!</text>
+        </g>
+        <g class="s-bob"><circle cx="320" cy="200" r="38" fill="#6b1e2e"/>
+          <text x="320" y="208" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-weight="700" font-size="22" fill="#fbf7f0">24 h</text></g>
+      </svg>
+      <div>
+        <h2>Thank-you</h2>
+        <ul class="chips">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 20h8M6 8h12v4a6 6 0 0 1-12 0z"/></svg>Linger a little</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 6-8 11-8 11z"/></svg>Thank the host in person</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M3 7l9 6 9-6"/></svg>Email within 24 hours</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4z"/></svg>Mention one specific moment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="player-nav">
+      <button class="btn btn--ghost btn--small" type="button" id="p-prev">← Back</button>
+      <span class="player-count" id="p-count" aria-live="polite">Scene 1 of 7</span>
+      <button class="btn btn--small" type="button" id="p-next">Next →</button>
+    </div>
   </div>
-</nav>
+</section>
 
-<section class="section" aria-label="Timeline">
-  <div class="wrap narrow" style="max-width:56rem">
-    <ol class="timeline">
-
-      <li class="step reveal" id="before">
-        <span class="step-marker" aria-hidden="true">1</span>
-        <div class="step-body">
-          <div>
-            <h2>Before the meal</h2>
-            <ul class="tip-list">
-              <li><strong>RSVP</strong> within a day, and confirm time and place the day before.</li>
-              <li><strong>Dress code:</strong> when unsure, go business casual or one step up.</li>
-              <li><strong>Allergies or diet?</strong> Tell the host in advance, briefly.</li>
-              <li><strong>Read the menu online</strong> and choose two options.</li>
-            </ul>
-          </div>
-          <svg class="step-art" viewBox="0 0 120 100" role="img" aria-label="Calendar with a checked date">
-            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="14" y="16" width="92" height="74" rx="4" fill="#fff"/><path d="M14 34h92M36 8v16M84 8v16"/>
-              <path d="M30 48h10M55 48h10M80 48h10M30 64h10M55 64h10M30 78h10"/>
-              <circle cx="85" cy="70" r="12" fill="#f3e6e8"/><path d="M79 70l4 4 8-8"/>
-            </g>
-          </svg>
-        </div>
-      </li>
-
-      <li class="step reveal" id="arrival">
-        <span class="step-marker" aria-hidden="true">2</span>
-        <div class="step-body">
-          <div>
-            <h2>Arrival</h2>
-            <ul class="tip-list">
-              <li><strong>Arrive 5–10 minutes early.</strong> Late is never neutral.</li>
-              <li><strong>Phone on silent and out of sight</strong>, in a pocket or bag, before you walk in.</li>
-              <li><strong>Firm handshake</strong>, eye contact, and your full name.</li>
-              <li><strong>Wait for the host</strong> to show you your seat before sitting.</li>
-            </ul>
-          </div>
-          <svg class="step-art" viewBox="0 0 120 100" role="img" aria-label="Clock showing a few minutes before the hour">
-            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-              <circle cx="60" cy="52" r="40" fill="#fff"/><circle cx="60" cy="52" r="3" fill="currentColor"/>
-              <path d="M60 52V22M60 52l-12-4"/>
-              <path d="M60 15v4M97 52h-4M60 89v-4M23 52h4" stroke-width="2"/>
-              <path d="M88 20a40 40 0 0 0-14-9" stroke="#b08d57" stroke-width="5"/>
-            </g>
-          </svg>
-        </div>
-      </li>
-
-      <li class="step reveal" id="ordering">
-        <span class="step-marker" aria-hidden="true">3</span>
-        <div class="step-body">
-          <div>
-            <h2>Ordering</h2>
-            <ul class="tip-list">
-              <li><strong>Mid-priced and easy to eat:</strong> chicken, fish, salad.</li>
-              <li><strong>Skip messy food:</strong> spaghetti, ribs, wings, big burgers.</li>
-              <li><strong>Alcohol?</strong> Only if your host drinks, and only one.</li>
-              <li><strong>Follow the host's lead</strong> on appetizers and dessert.</li>
-            </ul>
-          </div>
-          <svg class="step-art" viewBox="0 0 120 100" role="img" aria-label="Menu card with a checked mid-priced dish">
-            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="26" y="6" width="68" height="88" rx="2" fill="#fff"/><rect x="31" y="11" width="58" height="78" stroke-width="1" stroke="#b08d57"/>
-              <path d="M44 24h32" stroke-width="3"/>
-              <path d="M40 40h28M40 54h28M40 68h28" stroke-width="2"/>
-              <path d="M72 40h8M72 68h8" stroke-width="2"/>
-              <circle cx="76" cy="54" r="8" fill="#f3e6e8"/><path d="M72 54l3 3 5-6"/>
-            </g>
-          </svg>
-        </div>
-      </li>
-
-      <li class="step reveal" id="eating">
-        <span class="step-marker" aria-hidden="true">4</span>
-        <div class="step-body">
-          <div>
-            <h2>Eating</h2>
-            <ul class="tip-list">
-              <li><strong>Napkin on your lap</strong> right after you sit.</li>
-              <li><strong>Wait</strong> until everyone is served and the host starts.</li>
-              <li><strong>Small bites</strong>, so you can always answer a question.</li>
-              <li><strong>Ask, don't reach.</strong> Pass salt and pepper together, to the right.</li>
-            </ul>
-            <a class="card-link" href="table.html">Which fork? See the place setting →</a>
-          </div>
-          <svg class="step-art" viewBox="0 0 120 100" role="img" aria-label="Plate with fork on the left and knife on the right">
-            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="60" cy="50" r="34" fill="#fff"/><circle cx="60" cy="50" r="22" fill="#f3e6e8" stroke="#b08d57"/>
-              <path d="M12 18v16q0 6 5 7v45M17 18v14M22 18v16q0 6-5 7"/>
-              <path d="M104 86V18q8 10 6 30h-6"/>
-            </g>
-          </svg>
-        </div>
-      </li>
-
-      <li class="step reveal" id="conversation">
-        <span class="step-marker" aria-hidden="true">5</span>
-        <div class="step-body">
-          <div>
-            <h2>Conversation</h2>
-            <ul class="tip-list">
-              <li><strong>Let the host start business talk</strong>, usually after ordering.</li>
-              <li><strong>Talk to both neighbors</strong>, not only the recruiter.</li>
-              <li><strong>Never talk with your mouth full.</strong></li>
-            </ul>
-            <p style="margin: var(--space-2) 0 .75rem; font-weight:600;">Easy openers</p>
-            <div class="bubbles">
-              <span class="bubble">"How did you get started at the company?"</span>
-              <span class="bubble">"What do you enjoy most about Tucson?"</span>
-              <span class="bubble">"What does a typical first year look like?"</span>
-            </div>
-            <p style="margin: var(--space-3) 0 .75rem; font-weight:600;">Leave off the table <span class="visually-hidden">(topics to avoid)</span></p>
-            <div class="bubbles">
-              <span class="bubble bubble--avoid">Politics &amp; religion</span>
-              <span class="bubble bubble--avoid">Salary (at a first meal)</span>
-              <span class="bubble bubble--avoid">Complaints &amp; gossip</span>
-            </div>
-          </div>
-          <svg class="step-art" viewBox="0 0 120 100" role="img" aria-label="Two speech bubbles">
-            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round">
-              <path d="M10 14h62v36H34l-12 12V50H10z" fill="#fff"/>
-              <path d="M48 44h62v36h-12v12L86 80H48z" fill="#f3e6e8"/>
-              <path d="M22 28h38M22 38h26" stroke-linecap="round"/>
-              <circle cx="66" cy="62" r="2" fill="currentColor"/><circle cx="79" cy="62" r="2" fill="currentColor"/><circle cx="92" cy="62" r="2" fill="currentColor"/>
-            </g>
-          </svg>
-        </div>
-      </li>
-
-      <li class="step reveal" id="paying">
-        <span class="step-marker" aria-hidden="true">6</span>
-        <div class="step-body">
-          <div>
-            <h2>Paying</h2>
-            <ul class="tip-list">
-              <li><strong>Whoever invites, pays.</strong> At a recruiter meal, that's the company.</li>
-              <li><strong>Don't reach for the check.</strong> A sincere "thank you" is enough.</li>
-              <li><strong>If you host:</strong> tip 18–20% in the U.S. and settle the bill discreetly.</li>
-            </ul>
-          </div>
-          <svg class="step-art" viewBox="0 0 120 100" role="img" aria-label="Check folder with a receipt">
-            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="18" y="20" width="84" height="66" rx="3" fill="#6b1e2e" stroke="#521624"/>
-              <path d="M40 8h40v62l-6-4-7 4-7-4-7 4-7-4-6 4z" fill="#fff"/>
-              <path d="M48 22h24M48 32h24M48 42h14" stroke-width="2"/>
-              <path d="M64 52h8" stroke-width="3"/>
-            </g>
-          </svg>
-        </div>
-      </li>
-
-      <li class="step reveal" id="thanks">
-        <span class="step-marker" aria-hidden="true">7</span>
-        <div class="step-body">
-          <div>
-            <h2>The thank-you</h2>
-            <ul class="tip-list">
-              <li><strong>Stay a little</strong> after the meal; don't rush off.</li>
-              <li><strong>Thank the host</strong> at the table.</li>
-              <li><strong>Email within 24 hours.</strong> Mention one specific moment from the conversation.</li>
-            </ul>
-            <div class="menu-card" style="margin-top: var(--space-2); font-size:1rem;">
-              <p style="margin-bottom:.4rem"><strong>Subject:</strong> Thank you for lunch today</p>
-              <p style="margin-bottom:.4rem">Dear Ms. Rivera,</p>
-              <p style="margin-bottom:.4rem">Thank you for lunch and for explaining how your team tests new products. It made me even more excited about the internship.</p>
-              <p style="margin-bottom:0">Best regards,<br>Alex Smith</p>
-            </div>
-          </div>
-          <svg class="step-art" viewBox="0 0 120 100" role="img" aria-label="Envelope with a check mark">
-            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="10" y="22" width="90" height="60" rx="3" fill="#fff"/><path d="M10 25l45 32 45-32"/>
-              <circle cx="96" cy="78" r="16" fill="#6b1e2e" stroke="#521624"/><path d="M89 78l5 5 9-10" stroke="#fff"/>
-            </g>
-          </svg>
-        </div>
-      </li>
-    </ol>
+<section class="section section--paper" aria-labelledby="swipe-title">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="kicker">Mini-game</span>
+      <h2 id="swipe-title">Safe topic or skip it?</h2>
+      <p>Swipe right to talk about it, left to leave it off the table.</p>
+    </div>
+    <div class="swiper" id="swiper">
+      <div class="swipe-stack" id="swipe-stack" aria-live="polite"></div>
+      <div class="swipe-btns">
+        <button class="btn btn--ghost swipe-btn" type="button" id="swipe-no">← Skip it</button>
+        <button class="btn swipe-btn" type="button" id="swipe-yes">Talk about it →</button>
+      </div>
+      <p class="swipe-fb" id="swipe-fb" aria-live="polite"></p>
+      <p id="swipe-score" class="center" style="margin-inline:auto">Score: 0 of 0</p>
+    </div>
   </div>
 </section>
 
@@ -251,7 +273,7 @@
     <div class="section-head center">
       <span class="kicker">Quick check</span>
       <h2 id="dodont-title">Do or don't?</h2>
-      <p>Guess, then tap the card to check.</p>
+      <p>Guess, then tap to check.</p>
     </div>
     <div class="flip-grid">
       <div class="flip"><button class="flip-btn" type="button">
@@ -266,18 +288,6 @@
         <span class="flip-face flip-front"><span class="flip-label">Situation</span><span class="flip-title">You thank the server each time they bring something.</span><span class="flip-hint">Tap to flip ↻</span></span>
         <span class="flip-face flip-back"><span class="flip-label">✓ Do</span><span class="flip-text">Recruiters notice how you treat staff. A quiet "thank you" says a lot.</span></span>
       </button></div>
-      <div class="flip"><button class="flip-btn" type="button">
-        <span class="flip-face flip-front"><span class="flip-label">Situation</span><span class="flip-title">Your food arrives first, so you start while it's hot.</span><span class="flip-hint">Tap to flip ↻</span></span>
-        <span class="flip-face flip-back"><span class="flip-label">✗ Don't</span><span class="flip-text">Wait until everyone is served and the host begins, unless the host tells you to start.</span></span>
-      </button></div>
-      <div class="flip"><button class="flip-btn" type="button">
-        <span class="flip-face flip-front"><span class="flip-label">Situation</span><span class="flip-title">You mention a food allergy when the host invites you.</span><span class="flip-hint">Tap to flip ↻</span></span>
-        <span class="flip-face flip-back"><span class="flip-label">✓ Do</span><span class="flip-text">Telling the host early, in one sentence, helps them plan and avoids an awkward moment.</span></span>
-      </button></div>
-      <div class="flip"><button class="flip-btn" type="button">
-        <span class="flip-face flip-front"><span class="flip-label">Situation</span><span class="flip-title">You leave right after dessert to catch the bus.</span><span class="flip-hint">Tap to flip ↻</span></span>
-        <span class="flip-face flip-back"><span class="flip-label">✗ Don't</span><span class="flip-text">Plan to stay a little while after the meal. If you must leave, tell the host at the start.</span></span>
-      </button></div>
     </div>
     <span class="source center">Sources: Carreño (1853); Emily Post Institute; Virginia Tech Career and Professional Development.</span>
   </div>
@@ -286,7 +296,6 @@
 <section class="section" aria-labelledby="practice-title">
   <div class="wrap narrow center">
     <h2 id="practice-title">Practice before the real thing</h2>
-    <p>Rehearse your answers with UA's free interview tools, then test what you learned here.</p>
     <div class="btn-row" style="justify-content:center">
       <a class="btn btn--ghost" href="https://career.arizona.edu/resources/big-interview/" target="_blank" rel="noopener">Big Interview at UA (external site)</a>
       <a class="btn" href="quiz.html">Take the quiz</a>

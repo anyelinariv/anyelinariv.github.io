@@ -48,7 +48,7 @@
     <div>
       <span class="kicker">Classic etiquette, 1853</span>
       <h1>The Carreño Rules</h1>
-      <p class="lead">Venezuelan educator Manuel Antonio Carreño wrote the etiquette manual that generations of Latin American families grew up with. Here are his table rules in our own words, each with a tip for today.</p>
+      <p class="lead">The 1853 etiquette manual that raised generations of Latin American families. His table rules, in our words, with a tip for today.</p>
       <span class="source">Source: Carreño, <cite>Manual de urbanidad y buenas maneras</cite> (1853), chapters "De los banquetes" and "De la mesa."</span>
     </div>
     <svg class="book-art draw" viewBox="0 0 240 220" role="img" aria-labelledby="book-title">
@@ -88,19 +88,17 @@
         <rect x="60" y="92" width="400" height="86" rx="6" fill="#fff" stroke="#b08d57" stroke-width="2"/>
         <rect x="68" y="100" width="384" height="70" rx="3" fill="none" stroke="#e8dbc3"/>
         <g font-family="Source Sans 3, Trebuchet MS, sans-serif" font-weight="700" font-size="15" text-anchor="middle">
-          <!-- top side: host faces down, so the host's right hand is to the viewer's left -->
-          <circle cx="120" cy="60" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/>
-          <circle cx="190" cy="60" r="20" fill="#e8dbc3" stroke="#7a5c2e" stroke-width="2"/><text x="190" y="66" fill="#3d0f19">★</text>
-          <circle cx="260" cy="60" r="22" fill="#6b1e2e"/><text x="260" y="66" fill="#fbf7f0">H</text>
-          <circle cx="330" cy="60" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/>
-          <circle cx="400" cy="60" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/>
-          <!-- bottom side -->
-          <circle cx="120" cy="210" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/>
-          <circle cx="190" cy="210" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/>
-          <circle cx="260" cy="210" r="22" fill="#6b1e2e"/><text x="260" y="216" fill="#fbf7f0">H</text>
-          <circle cx="330" cy="210" r="20" fill="#e8dbc3" stroke="#7a5c2e" stroke-width="2"/><text x="330" y="216" fill="#3d0f19">★</text>
-          <circle cx="400" cy="210" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/>
-        </g>
+<g class="seat" tabindex="0" role="button" data-kind="guest" aria-label="Guest seat"><circle cx="120" cy="60" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/></g>
+<g class="seat" tabindex="0" role="button" data-kind="hon" aria-label="Guest of honor"><circle cx="190" cy="60" r="20" fill="#e8dbc3" stroke="#7a5c2e" stroke-width="2"/><text x="190" y="66" fill="#3d0f19">★</text></g>
+<g class="seat" tabindex="0" role="button" data-kind="host" aria-label="Host"><circle cx="260" cy="60" r="22" fill="#6b1e2e"/><text x="260" y="66" fill="#fbf7f0">H</text></g>
+<g class="seat" tabindex="0" role="button" data-kind="guest" aria-label="Guest seat"><circle cx="330" cy="60" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/></g>
+<g class="seat" tabindex="0" role="button" data-kind="guest" aria-label="Guest seat"><circle cx="400" cy="60" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/></g>
+<g class="seat" tabindex="0" role="button" data-kind="guest" aria-label="Guest seat"><circle cx="120" cy="210" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/></g>
+<g class="seat" tabindex="0" role="button" data-kind="guest" aria-label="Guest seat"><circle cx="190" cy="210" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/></g>
+<g class="seat" tabindex="0" role="button" data-kind="host" aria-label="Host"><circle cx="260" cy="210" r="22" fill="#6b1e2e"/><text x="260" y="216" fill="#fbf7f0">H</text></g>
+<g class="seat" tabindex="0" role="button" data-kind="hon" aria-label="Guest of honor"><circle cx="330" cy="210" r="20" fill="#e8dbc3" stroke="#7a5c2e" stroke-width="2"/><text x="330" y="216" fill="#3d0f19">★</text></g>
+<g class="seat" tabindex="0" role="button" data-kind="guest" aria-label="Guest seat"><circle cx="400" cy="210" r="20" fill="#fff" stroke="#b08d57" stroke-width="2"/></g>
+</g>
         <g fill="#fbf7f0" stroke="#6b1e2e" stroke-width="1.2">
           <rect class="card-pop" x="105" y="104" width="30" height="12"/>
           <rect class="card-pop" x="175" y="104" width="30" height="12"/>
@@ -117,16 +115,14 @@
       </svg>
       <div>
         <h3>Seats are assigned</h3>
-        <ul class="tip-list">
-          <li><strong>H</strong> Hosts sit at the center of each long side, facing each other.</li>
-          <li><strong>★</strong> Guests of honor sit at the hosts' right hand.</li>
-          <li>Find your place card and stay there. Never swap.</li>
-        </ul>
+        <p style="font-size:1rem;color:var(--ink-soft)">Tap a seat.</p>
+        <p class="seat-caption" id="seat-caption" aria-live="polite">Hosts (H) sit at the center, facing each other.</p>
         <span class="source">Source: Carreño, "De los banquetes."</span>
       </div>
     </div>
 
-    <div class="grid grid-3 reveal-stagger">
+    <p class="tiles-hint">Tap a rule to open it.</p>
+    <div class="grid grid-3 reveal-stagger tiles">
       <article class="menu-card rule-card">
         <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="10" r="5"/><path d="M14 44V30a10 10 0 0 1 20 0v14"/><path d="M6 24h8M34 24h8"/></svg>
         <div><h3>The host sets the pace</h3><p>Sit after the host, start eating when the host does, and rise only when the host rises.</p></div>
@@ -179,7 +175,8 @@
       <span class="theme-letter" aria-hidden="true">B</span>
       <h2 id="b-title">The things on the table</h2>
     </div>
-    <div class="grid grid-3 reveal-stagger">
+    <p class="tiles-hint">Tap a rule to open it.</p>
+    <div class="grid grid-3 reveal-stagger tiles">
       <article class="menu-card rule-card">
         <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="12" r="6"/><circle cx="24" cy="30" r="12"/><path d="M38 6h6l-1 10h-4z"/></svg>
         <div><h3>Everything has a place</h3><p>Bread on the left, glasses and cups on the right. Leave them where they were set.</p></div>
@@ -228,7 +225,8 @@
       <span class="theme-letter" aria-hidden="true">C</span>
       <h2 id="c-title">Servers and companions</h2>
     </div>
-    <div class="grid grid-3 reveal-stagger">
+    <p class="tiles-hint">Tap a rule to open it.</p>
+    <div class="grid grid-3 reveal-stagger tiles">
       <article class="menu-card rule-card">
         <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="12" r="6"/><path d="M8 44V30a10 10 0 0 1 20 0"/><path d="M30 20h14M37 20v-4"/><path d="M28 24q9-8 18 0z"/></svg>
         <div><h3>Speak kindly to servers</h3><p>Low, calm and polite: neither overly familiar nor harsh. Ask the server, not your neighbors, for what you need.</p></div>
@@ -264,7 +262,7 @@
     <div class="section-head center">
       <span class="kicker">1853 → today</span>
       <h2 id="then-title">Classic rule, modern tip</h2>
-      <p>Tap a card to see how the rule works at a business meal today.</p>
+      <p>Tap a card, then drag the slider through time.</p>
     </div>
     <div class="flip-grid">
       <div class="flip"><button class="flip-btn" type="button">
@@ -293,19 +291,19 @@
       </button></div>
     </div>
 
-    <div class="table-scroll reveal" style="margin-top: var(--space-4);">
-      <table class="then-now">
-        <caption class="visually-hidden">Which Carreño rules still hold today</caption>
-        <thead><tr><th scope="col">Rule</th><th scope="col">In 1853</th><th scope="col">Today</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Knife to mouth</th><td>Never</td><td><span class="badge badge--do">✓ Still holds</span></td></tr>
-          <tr><th scope="row">Elbows on the table</th><td>Never while eating</td><td><span class="badge badge--do">✓ Still holds</span></td></tr>
-          <tr><th scope="row">Wait for the host</th><td>To sit, eat and rise</td><td><span class="badge badge--do">✓ Still holds</span></td></tr>
-          <tr><th scope="row">Seating by gender</th><td>Gentleman escorts a lady</td><td><span class="badge badge--soft">≈ Softened: host seats everyone</span></td></tr>
-          <tr><th scope="row">Toasts</th><td>Formal events only</td><td><span class="badge badge--soft">≈ Softened: brief toasts welcome</span></td></tr>
-          <tr><th scope="row">Bread before soup</th><td>Not allowed</td><td><span class="badge badge--soft">≈ Softened</span></td></tr>
-        </tbody>
-      </table>
+    <div class="timeslider reveal" id="timeslider">
+      <span class="ts-year" id="ts-year" aria-hidden="true">1853</span>
+      <label class="visually-hidden" for="ts-range">Travel from 1853 to today</label>
+      <input class="ts-range" id="ts-range" type="range" min="0" max="100" value="0" aria-valuetext="1853">
+      <div class="ts-ends"><span>1853 · Carreño</span><span>Today ✓ holds · ≈ softened</span></div>
+      <ul class="ts-rows">
+<li><span class="ts-rule">Knife to mouth</span><span class="ts-val"><span class="ts-then">Never</span><span class="ts-now">✓ Still never</span></span></li>
+<li><span class="ts-rule">Elbows on the table</span><span class="ts-val"><span class="ts-then">Never while eating</span><span class="ts-now">✓ Still avoid them</span></span></li>
+<li><span class="ts-rule">Wait for the host</span><span class="ts-val"><span class="ts-then">To sit, eat and rise</span><span class="ts-now">✓ Still the rule</span></span></li>
+<li><span class="ts-rule">Seating by gender</span><span class="ts-val"><span class="ts-then">Gentleman escorts a lady</span><span class="ts-now">≈ The host seats everyone</span></span></li>
+<li><span class="ts-rule">Toasts</span><span class="ts-val"><span class="ts-then">Formal events only</span><span class="ts-now">≈ Short toasts are welcome</span></span></li>
+<li><span class="ts-rule">Bread before soup</span><span class="ts-val"><span class="ts-then">Not allowed</span><span class="ts-now">≈ Fine, in moderation</span></span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -320,6 +318,32 @@
     </div>
   </div>
 </section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var cap = document.getElementById("seat-caption");
+  var TEXT = { host: "H · Host: center of the long side. Everyone follows the host's lead.",
+               hon: "★ Guest of honor: at the host's right hand.",
+               guest: "Guest: find your place card and stay there. Never swap." };
+  document.querySelectorAll(".seat").forEach(function (seat) {
+    function pick() {
+      document.querySelectorAll(".seat").forEach(function (s) { s.classList.remove("is-on"); });
+      seat.classList.add("is-on");
+      cap.style.opacity = 0;
+      setTimeout(function () { cap.textContent = TEXT[seat.getAttribute("data-kind")]; cap.style.opacity = 1; }, 150);
+    }
+    seat.addEventListener("click", pick);
+    seat.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+  });
+  var range = document.getElementById("ts-range"), box = document.getElementById("timeslider"), year = document.getElementById("ts-year");
+  function upd() {
+    var t = range.value / 100, y = Math.round(1853 + t * (new Date().getFullYear() - 1853));
+    box.style.setProperty("--t", t);
+    year.textContent = t >= 1 ? "Today" : y;
+    range.setAttribute("aria-valuetext", t >= 1 ? "Today" : String(y));
+  }
+  range.addEventListener("input", upd); upd();
+});
+</script>
 </main>
 
 <footer class="site-footer">
