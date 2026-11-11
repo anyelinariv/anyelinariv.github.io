@@ -6,7 +6,7 @@ A static website (HTML, CSS, vanilla JavaScript and inline SVG) that teaches Uni
 
 | File | Content |
 |---|---|
-| `index.html` | Home: hero, the four big ideas, B·M·W trick, key numbers, external resources |
+| `index.html` | Home: hero, the four big ideas (3D icons), B·M·W trick, original captioned video, 3D dish carousel, key numbers, external resources |
 | `table.html` | Interactive place-setting explorer, "Which one do I use first?" game, pause/finished demo |
 | `behavior.html` | Meal timeline: Before → Arrival → Ordering → Eating → Conversation → Paying → Thank-you |
 | `carreno.html` | The Carreño Rules (1853 manual), paraphrased, with "classic rule → today's tip" flip cards |
