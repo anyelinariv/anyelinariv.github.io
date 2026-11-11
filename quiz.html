@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz: Test Your Table Manners | Maître d'</title>
+<meta name="description" content="Ten questions on business dining etiquette with instant feedback, plus a printable list with an answer key.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.svg" alt="" width="42" height="42">
+      <span class="brand-text">
+        <span class="brand-name">Maître d'</span>
+        <span class="brand-sub">Business Dining Etiquette</span>
+      </span>
+      <span class="visually-hidden">(Home)</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="table.html">The Table</a></li>
+        <li><a href="behavior.html">The Meal</a></li>
+        <li><a href="carreno.html">Carreño Rules</a></li>
+        <li><a href="quiz.html" aria-current="page">Quiz</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Ten questions · about three minutes</span>
+    <h1>How ready are you for the table?</h1>
+    <p class="lead">Answer each question for instant feedback. Your score updates as you go.</p>
+    <div class="btn-row">
+      <a class="btn btn--ghost btn--small" href="#survey-list">Jump to the printable list</a>
+    </div>
+  </div>
+</section>
+
+<section class="section no-print" aria-labelledby="quiz-title">
+  <div class="wrap">
+    <h2 id="quiz-title" class="visually-hidden">Interactive quiz</h2>
+    <form class="quiz" id="quiz" novalidate>
+      <noscript><p>The interactive quiz needs JavaScript. You can still use the printable list and answer key below.</p></noscript>
+    </form>
+
+    <div class="score-board" id="score-board" aria-live="polite">
+      <span><strong id="score-num">0</strong> / 10 correct</span>
+      <span class="score-meter" aria-hidden="true"><span id="score-bar"></span></span>
+      <span id="answered">0 of 10 answered</span>
+    </div>
+
+    <div class="result menu-card menu-card--center narrow" id="result" hidden style="margin: var(--space-4) auto 0;">
+      <span class="kicker">Your result</span>
+      <h3 id="result-title">Well done</h3>
+      <p id="result-text"></p>
+      <div class="btn-row" style="justify-content:center">
+        <button class="btn" type="button" id="retake">Retake the quiz</button>
+        <a class="btn btn--ghost" href="table.html">Review the table</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper print-list" id="survey-list" aria-labelledby="list-title">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <span class="kicker">For surveys and class use</span>
+      <h2 id="list-title">Survey questions: printable list</h2>
+      <p>The same ten questions as a plain list, with the answer key below. Use them to check what students learned.</p>
+      <button class="btn btn--small no-print" type="button" id="print-btn">Print the list</button>
+    </div>
+
+    <ol>
+      <li><strong>Multiple choice.</strong> Where is your bread plate?
+        <ol><li>Upper left, above the forks</li><li>Upper right, above the knife</li><li>Directly above the dinner plate</li><li>Wherever there is room</li></ol></li>
+      <li><strong>Multiple choice.</strong> Soup is the first course. Which utensil do you use?
+        <ol><li>The spoon farthest to the right</li><li>The fork farthest to the left</li><li>The spoon above the plate</li><li>The utensil closest to the plate</li></ol></li>
+      <li><strong>True or false.</strong> You should start eating as soon as your plate arrives so your food doesn't get cold.</li>
+      <li><strong>Multiple choice.</strong> When should you arrive at a business meal?
+        <ol><li>Exactly on time</li><li>5–10 minutes early</li><li>30 minutes early</li><li>A few minutes late, so the host is ready</li></ol></li>
+      <li><strong>Multiple choice.</strong> Which is the best choice to order?
+        <ol><li>The most expensive steak</li><li>Spaghetti with tomato sauce</li><li>A mid-priced chicken or fish dish</li><li>Nothing, just a drink</li></ol></li>
+      <li><strong>True or false.</strong> Keeping your phone face up on the table is fine if you're waiting for a call.</li>
+      <li><strong>Multiple choice.</strong> The salt is at the far end of the table. What do you do?
+        <ol><li>Reach across to get it</li><li>Stand up and walk over</li><li>Ask the person nearest to pass it</li><li>Do without</li></ol></li>
+      <li><strong>Multiple choice.</strong> How do you show the server you have finished eating?
+        <ol><li>Fork and knife side by side on the plate</li><li>Fork and knife crossed on the plate</li><li>Push the plate away</li><li>Put your napkin on the plate</li></ol></li>
+      <li><strong>True or false.</strong> According to Carreño, you may use the knife to bring food to your mouth once you've finished cutting.</li>
+      <li><strong>Short answer.</strong> When should you send a thank-you note after a business meal, and what should it mention?</li>
+    </ol>
+
+    <div class="answer-key">
+      <h3>Answer key</h3>
+      <ol>
+        <li>A. Upper left (B·M·W: bread, meal, water).</li>
+        <li>A. Utensils are used from the outside in.</li>
+        <li>False. Wait until everyone is served and the host begins.</li>
+        <li>B. 5–10 minutes early.</li>
+        <li>C. Mid-priced and easy to eat.</li>
+        <li>False. Keep it silent and out of sight.</li>
+        <li>C. Ask; never reach across someone.</li>
+        <li>A. Side by side on the plate.</li>
+        <li>False. The knife only cuts and serves.</li>
+        <li>Within 24 hours; thank the host and mention something specific from the conversation.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Maître d'</p>
+        <p>Business dining etiquette for University of Arizona students.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="table.html">The Table</a></li>
+          <li><a href="behavior.html">The Meal</a></li>
+          <li><a href="carreno.html">Carreño Rules</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+    <p class="footer-small">© <span data-year>2026</span> Maître d' · Created for SIE 515, University of Arizona. Illustrations are original. Not affiliated with or endorsed by the University of Arizona.</p>
+  </div>
+</footer>
+<script src="assets/js/quiz.js" defer></script>
+</body>
+</html>
