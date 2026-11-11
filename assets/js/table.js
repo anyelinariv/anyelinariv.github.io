@@ -189,3 +189,140 @@
     });
   }
 })();
+
+/* ---------- 4. Set-the-table drag & drop puzzle ---------- */
+(function () {
+  "use strict";
+  var board = document.getElementById("pz-board");
+  if (!board) return;
+  var tray = document.getElementById("pz-tray");
+  var items = tray.querySelectorAll(".pz-item");
+  var zones = board.querySelectorAll(".pz-zone");
+  var status = document.getElementById("pz-status");
+  var meter = document.getElementById("pz-meter");
+  var NAMES = { bread: "Bread plate", glass: "Water glass", napkin: "Napkin", fork: "Fork", knife: "Knife", spoon: "Spoon" };
+  var HINTS = {
+    bread: "B·M·W: bread goes on the left, up high.",
+    glass: "B·M·W: water goes on the right, above the knife.",
+    napkin: "The napkin sits at the far left, beside the fork.",
+    fork: "Forks go left of the plate.",
+    knife: "The knife goes right of the plate, blade facing in.",
+    spoon: "The spoon goes outside the knife, far right."
+  };
+  var selected = null, placed = 0, suppressClick = false;
+
+  function select(item) {
+    items.forEach(function (i) { i.setAttribute("aria-pressed", String(i === item)); });
+    selected = item;
+    if (item) status.textContent = NAMES[item.dataset.piece] + " selected. Now pick its spot.";
+  }
+
+  function tryPlace(item, zone) {
+    if (!item || zone.classList.contains("is-filled")) return;
+    var piece = item.dataset.piece;
+    if (zone.dataset.accept === piece) {
+      var svg = item.querySelector("svg").cloneNode(true);
+      zone.innerHTML = ""; zone.appendChild(svg);
+      zone.classList.remove("is-bad"); zone.classList.add("is-filled"); zone.disabled = true;
+      zone.setAttribute("aria-label", NAMES[piece] + ", placed");
+      item.classList.add("is-placed"); item.disabled = true; item.setAttribute("aria-pressed", "false");
+      selected = null; placed++;
+      meter.style.width = (placed / zones.length * 100) + "%";
+      if (placed === zones.length) {
+        status.textContent = "✓ Table set! Every piece is in place.";
+        if (window.celebrate) window.celebrate();
+      } else {
+        status.textContent = "✓ " + NAMES[piece] + " placed. " + placed + " of " + zones.length + " done.";
+        var next = tray.querySelector(".pz-item:not(.is-placed)");
+        if (next && document.activeElement === document.body) next.focus();
+      }
+    } else {
+      zone.classList.remove("is-bad"); void zone.offsetWidth; zone.classList.add("is-bad");
+      setTimeout(function () { zone.classList.remove("is-bad"); }, 450);
+      status.textContent = "✗ Not there. " + HINTS[piece];
+    }
+  }
+
+  /* Tap / keyboard: select an item, then a zone */
+  items.forEach(function (item) {
+    item.addEventListener("click", function () {
+      if (suppressClick) { suppressClick = false; return; }
+      select(selected === item ? null : item);
+    });
+  });
+  zones.forEach(function (zone) {
+    zone.addEventListener("click", function () {
+      if (!selected) { status.textContent = "Pick a piece from the tray first."; return; }
+      tryPlace(selected, zone);
+    });
+  });
+
+  /* Pointer drag */
+  items.forEach(function (item) {
+    var startX, startY, ghost = null, overZone = null;
+    item.addEventListener("pointerdown", function (e) {
+      if (item.disabled || e.button > 0) return;
+      startX = e.clientX; startY = e.clientY;
+      item.setPointerCapture(e.pointerId);
+    });
+    item.addEventListener("pointermove", function (e) {
+      if (startX == null) return;
+      if (!ghost && Math.hypot(e.clientX - startX, e.clientY - startY) > 6) {
+        var r = item.getBoundingClientRect();
+        ghost = item.cloneNode(true);
+        ghost.classList.add("is-dragging");
+        ghost.style.width = r.width + "px";
+        ghost.setAttribute("aria-hidden", "true");
+        document.body.appendChild(ghost);
+        item.classList.add("pz-ghost");
+      }
+      if (ghost) {
+        ghost.style.left = (e.clientX - ghost.offsetWidth / 2) + "px";
+        ghost.style.top = (e.clientY - ghost.offsetHeight / 2) + "px";
+        var under = document.elementFromPoint(e.clientX, e.clientY);
+        var z = under && under.closest ? under.closest(".pz-zone:not(.is-filled)") : null;
+        if (z !== overZone) {
+          if (overZone) overZone.classList.remove("is-hover");
+          if (z) z.classList.add("is-hover");
+          overZone = z;
+        }
+      }
+    });
+    function end() {
+      if (ghost) {
+        suppressClick = true;
+        ghost.remove(); ghost = null;
+        item.classList.remove("pz-ghost");
+        if (overZone) { overZone.classList.remove("is-hover"); tryPlace(item, overZone); }
+        overZone = null;
+        setTimeout(function () { suppressClick = false; }, 0);
+      }
+      startX = startY = null;
+    }
+    item.addEventListener("pointerup", end);
+    item.addEventListener("pointercancel", end);
+  });
+
+  document.getElementById("pz-reset").addEventListener("click", function () {
+    placed = 0; selected = null; meter.style.width = "0";
+    zones.forEach(function (z) {
+      z.classList.remove("is-filled", "is-bad"); z.disabled = false; z.textContent = "?";
+    });
+    var labels = ["upper left", "upper right", "far left", "left of the plate", "right of the plate", "far right"];
+    zones.forEach(function (z, i) { z.setAttribute("aria-label", "Empty spot: " + labels[i]); });
+    items.forEach(function (i) { i.classList.remove("is-placed"); i.disabled = false; i.setAttribute("aria-pressed", "false"); });
+    status.textContent = "0 of " + zones.length + " placed";
+  });
+})();
+
+/* Clicking a piece of the drawing works like clicking its pin */
+(function () {
+  var svg = document.getElementById("setting-svg");
+  if (!svg) return;
+  svg.querySelectorAll(".item").forEach(function (g) {
+    g.addEventListener("click", function () {
+      var pin = document.querySelector('.hotspot[data-item="' + g.getAttribute("data-item") + '"]');
+      if (pin) pin.click();
+    });
+  });
+})();

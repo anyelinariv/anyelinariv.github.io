@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Parisienne&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/js/main.js" defer></script>
 </head>
@@ -47,7 +47,7 @@
   <div class="wrap">
     <span class="kicker">Ten questions · about three minutes</span>
     <h1>How ready are you for the table?</h1>
-    <p class="lead">Answer each question for instant feedback. Your score updates as you go.</p>
+    <p class="lead">One question at a time. Instant feedback.</p>
     <div class="btn-row">
       <a class="btn btn--ghost btn--small" href="#survey-list">Jump to the printable list</a>
     </div>
@@ -57,6 +57,7 @@
 <section class="section no-print" aria-labelledby="quiz-title">
   <div class="wrap">
     <h2 id="quiz-title" class="visually-hidden">Interactive quiz</h2>
+    <div class="quiz-progress" id="quiz-progress" aria-hidden="true"></div>
     <form class="quiz" id="quiz" novalidate>
       <noscript><p>The interactive quiz needs JavaScript. You can still use the printable list and answer key below.</p></noscript>
     </form>
@@ -68,6 +69,11 @@
     </div>
 
     <div class="result menu-card menu-card--center narrow" id="result" hidden style="margin: var(--space-4) auto 0;">
+      <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#f1e1b9" stroke-width="10"/>
+        <circle class="ring-fg" id="ring-fg" cx="60" cy="60" r="50" fill="none" stroke="#24493a" stroke-width="10" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)"/>
+        <text id="ring-text" x="60" y="68" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="26" fill="#24493a">0/10</text>
+      </svg>
       <span class="kicker">Your result</span>
       <h3 id="result-title">Well done</h3>
       <p id="result-text"></p>

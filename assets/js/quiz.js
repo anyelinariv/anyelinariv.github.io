@@ -37,7 +37,17 @@
   var scoreBar = document.getElementById("score-bar");
   var answeredEl = document.getElementById("answered");
   var result = document.getElementById("result");
+  var progress = document.getElementById("quiz-progress");
   var state;
+
+  function showQ(i) {
+    var qs = form.querySelectorAll(".q");
+    qs.forEach(function (q, k) { q.classList.toggle("is-current", k === i); });
+    Array.prototype.forEach.call(progress.children, function (d, k) { d.classList.toggle("cur", k === i && !d.classList.contains("ok") && !d.classList.contains("no")); });
+    var focusable = qs[i] && qs[i].querySelector("input, textarea");
+    if (focusable && state.started) focusable.focus({ preventScroll: true });
+    state.started = true;
+  }
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -47,8 +57,10 @@
   }
 
   function build() {
-    state = { answered: 0, correct: 0 };
+    state = { answered: 0, correct: 0, started: false };
     form.innerHTML = "";
+    progress.innerHTML = "";
+    QUESTIONS.forEach(function () { progress.appendChild(document.createElement("span")); });
     QUESTIONS.forEach(function (item, i) {
       var fs = el("fieldset", "q");
       var lg = el("legend");
@@ -101,14 +113,27 @@
         fs.appendChild(wrap);
       }
       fs.appendChild(fb);
+      if (i < QUESTIONS.length - 1) {
+        var nx = el("button", "btn btn--small q-next", "Next question →");
+        nx.type = "button"; nx.hidden = true;
+        nx.addEventListener("click", function () { showQ(i + 1); });
+        fs.appendChild(nx);
+      }
+      fs.dataset.index = i;
       form.appendChild(fs);
     });
     update();
     result.hidden = true;
+    showQ(0);
   }
 
   function finish(ok, fb, verdict, detail) {
     state.answered++;
+    var fs = fb.closest(".q"), i = +fs.dataset.index;
+    progress.children[i].className = ok ? "ok" : "no";
+    fs.querySelectorAll(".opt").forEach(function (o) { o.classList.add("is-locked"); });
+    var nx = fs.querySelector(".q-next");
+    if (nx) { nx.hidden = false; setTimeout(function () { nx.focus({ preventScroll: true }); }, 50); }
     if (ok) state.correct++;
     fb.className = "q-feedback " + (ok ? "ok" : "no");
     fb.innerHTML = "";
@@ -133,6 +158,11 @@
     document.getElementById("result-title").textContent = title;
     document.getElementById("result-text").textContent = text;
     result.hidden = false;
+    var fg = document.getElementById("ring-fg");
+    fg.style.strokeDashoffset = 314.16;
+    document.getElementById("ring-text").textContent = s + "/10";
+    requestAnimationFrame(function () { requestAnimationFrame(function () { fg.style.strokeDashoffset = 314.16 * (1 - s / 10); }); });
+    if (s >= 9 && window.celebrate) window.celebrate();
     result.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
   }
 
