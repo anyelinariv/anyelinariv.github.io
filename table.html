@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Table Setting | Maître d'</title>
+<meta name="description" content="Explore an interactive formal place setting: which fork, which glass, where the bread plate goes, plus a utensil mini-game.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.svg" alt="" width="42" height="42">
+      <span class="brand-text">
+        <span class="brand-name">Maître d'</span>
+        <span class="brand-sub">Business Dining Etiquette</span>
+      </span>
+      <span class="visually-hidden">(Home)</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="table.html" aria-current="page">The Table</a></li>
+        <li><a href="behavior.html">The Meal</a></li>
+        <li><a href="carreno.html">Carreño Rules</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- Shared utensil drawings, reused by every diagram on this page -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="sym-fork" viewBox="0 0 24 180">
+      <path d="M2 1V30Q2 46 9 50L10 175Q12 179 14 175L15 50Q22 46 22 30V1M7.5 1V28M12 1V28M16.5 1V28" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="sym-knife" viewBox="0 0 20 180">
+      <path d="M6 3V175Q9 179 12 175V92Q18 60 14 12Q11 0 6 3Z" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="sym-spoon" viewBox="0 0 24 180">
+      <path d="M12 1C-1 1-1 45 12 45C25 45 25 1 12 1ZM10 45L10 175Q12 179 14 175L14 45" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Interactive place setting</span>
+    <h1>Read the table in one glance.</h1>
+    <p class="lead">Tap each numbered pin to learn what it is and how to use it. Then play the utensil game.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="explore-title">
+  <div class="wrap">
+    <h2 id="explore-title" class="visually-hidden">Place-setting explorer</h2>
+    <div class="explorer">
+      <div class="setting-stage" id="stage">
+        <svg class="setting-svg" id="setting-svg" viewBox="0 0 800 520" role="img" aria-labelledby="set-title set-desc">
+          <title id="set-title">Formal place setting seen from above</title>
+          <desc id="set-desc">A place card at the top. Bread plate with butter knife at upper left. Napkin, salad fork and dinner fork on the left. Dinner plate in the center with dessert spoon and fork above it. Dinner knife and soup spoon on the right. Water glass and two wine glasses at upper right.</desc>
+          <rect width="800" height="520" fill="#fbf7f0"/>
+          <path d="M0 470H800" stroke="#e8dbc3" stroke-width="1"/>
+          <g fill="#fff" stroke="#8a6a3c" stroke-width="2">
+            <g class="item" data-item="placecard">
+              <rect class="hl" x="345" y="38" width="110" height="44" rx="2"/>
+              <text x="400" y="66" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="17" fill="#6b1e2e" stroke="none">Your name</text>
+            </g>
+            <g class="item" data-item="bread">
+              <circle class="hl" cx="190" cy="115" r="50"/>
+              <circle cx="190" cy="115" r="38" stroke-dasharray="3 5" stroke="#d9c9a8"/>
+              <use class="hl" href="#sym-knife" width="20" height="180" transform="translate(140 128) rotate(-90) scale(.55)"/>
+            </g>
+            <g class="item" data-item="napkin">
+              <path class="hl" d="M62 210H122L116 410H68Z" fill="#6b1e2e" stroke="#521624"/>
+              <path d="M92 210V410" stroke="#a35a68" stroke-width="1.5"/>
+            </g>
+            <g class="item" data-item="saladfork">
+              <use class="hl" href="#sym-fork" x="138" y="225" width="24" height="180"/>
+            </g>
+            <g class="item" data-item="dinnerfork">
+              <use class="hl" href="#sym-fork" x="196" y="205" width="27" height="205"/>
+            </g>
+            <g class="item" data-item="plate">
+              <circle class="hl" cx="400" cy="315" r="122"/>
+              <circle cx="400" cy="315" r="96" stroke="#d9c9a8"/>
+              <circle cx="400" cy="315" r="70" fill="#f3e6e8" stroke="#a35a68"/>
+            </g>
+            <g class="item" data-item="dessert">
+              <use class="hl" href="#sym-spoon" width="24" height="180" transform="translate(320 168) rotate(-90) scale(.88)"/>
+              <use class="hl" href="#sym-fork" width="24" height="180" transform="translate(480 168) rotate(90) scale(.88)"/>
+            </g>
+            <g class="item" data-item="knife">
+              <use class="hl" href="#sym-knife" x="574" y="210" width="22" height="198"/>
+            </g>
+            <g class="item" data-item="soupspoon">
+              <use class="hl" href="#sym-spoon" x="636" y="220" width="26" height="190"/>
+            </g>
+            <g class="item" data-item="water">
+              <circle class="hl" cx="588" cy="118" r="32"/>
+              <circle cx="588" cy="118" r="23" fill="#eef3f6" stroke="#d9c9a8"/>
+            </g>
+            <g class="item" data-item="wine">
+              <circle class="hl" cx="660" cy="150" r="27"/>
+              <circle cx="660" cy="150" r="18" fill="#f3e6e8" stroke="#d9c9a8"/>
+              <circle class="hl" cx="718" cy="190" r="23"/>
+              <circle cx="718" cy="190" r="15" fill="#faf3df" stroke="#d9c9a8"/>
+            </g>
+          </g>
+        </svg>
+        <!-- Hotspot buttons are positioned as % of the 800×520 drawing -->
+        <button class="hotspot" type="button" data-item="placecard" style="left:57.5%;top:11.5%" aria-label="1: Place card">1</button>
+        <button class="hotspot" type="button" data-item="napkin" style="left:11.75%;top:60%" aria-label="2: Napkin">2</button>
+        <button class="hotspot" type="button" data-item="saladfork" style="left:18.75%;top:50%" aria-label="3: Salad fork">3</button>
+        <button class="hotspot" type="button" data-item="dinnerfork" style="left:26.25%;top:70%" aria-label="4: Dinner fork">4</button>
+        <button class="hotspot" type="button" data-item="plate" style="left:50%;top:60.5%" aria-label="5: Dinner plate">5</button>
+        <button class="hotspot" type="button" data-item="knife" style="left:73%;top:70%" aria-label="6: Dinner knife">6</button>
+        <button class="hotspot" type="button" data-item="soupspoon" style="left:81.25%;top:50%" aria-label="7: Soup spoon">7</button>
+        <button class="hotspot" type="button" data-item="bread" style="left:23.75%;top:22%" aria-label="8: Bread plate and butter knife">8</button>
+        <button class="hotspot" type="button" data-item="dessert" style="left:50%;top:32.3%" aria-label="9: Dessert spoon and fork">9</button>
+        <button class="hotspot" type="button" data-item="water" style="left:73.5%;top:22.7%" aria-label="10: Water glass">10</button>
+        <button class="hotspot" type="button" data-item="wine" style="left:86%;top:32%" aria-label="11: Wine glasses">11</button>
+      </div>
+
+      <aside class="info-panel" aria-label="Item details">
+        <div class="menu-card" id="info" aria-live="polite">
+          <span class="info-step" id="info-step">Start here</span>
+          <h3 id="info-title">Pick any numbered pin</h3>
+          <p id="info-text">Each pin opens a short tip. Follow the numbers to go around the setting in order.</p>
+          <div class="btn-row" style="margin-top:.5rem">
+            <button class="btn btn--small btn--ghost" type="button" id="prev-item">← Previous</button>
+            <button class="btn btn--small" type="button" id="next-item">Start the tour →</button>
+          </div>
+          <div class="progress-dots" id="dots" aria-hidden="true"></div>
+          <p class="visually-hidden" id="seen-count"></p>
+        </div>
+      </aside>
+    </div>
+
+    <details class="reveal" style="margin-top: var(--space-3);">
+      <summary>Show all items as a list</summary>
+      <ol class="legend-list" id="legend"></ol>
+    </details>
+  </div>
+</section>
+
+<section class="section section--paper" aria-labelledby="game-title">
+  <div class="wrap game">
+    <div class="section-head center">
+      <span class="kicker">Mini-game</span>
+      <h2 id="game-title">Which one do I use first?</h2>
+      <p>A course arrives. Pick the right utensil. Hint: work from the outside in.</p>
+    </div>
+
+    <div class="menu-card game-card">
+      <p class="info-step" id="game-round">Course 1 of 6</p>
+      <p class="game-course" id="game-course">Soup is served</p>
+      <p id="game-prompt" style="margin-inline:auto">Which utensil do you pick up?</p>
+
+      <div class="game-board" id="game-board">
+        <button class="utensil utensil--h" type="button" data-u="butter" style="grid-area:butter">
+          <svg viewBox="0 0 180 30" aria-hidden="true" fill="#fff" stroke="currentColor" stroke-width="3"><use href="#sym-knife" width="20" height="180" transform="translate(0 25) rotate(-90)"/></svg>
+          Butter knife
+        </button>
+        <button class="utensil utensil--h" type="button" data-u="dessert" style="grid-area:dessert">
+          <svg viewBox="0 0 180 30" aria-hidden="true" fill="#fff" stroke="currentColor" stroke-width="3"><use href="#sym-spoon" width="24" height="180" transform="translate(0 27) rotate(-90)"/></svg>
+          Dessert spoon
+        </button>
+        <button class="utensil" type="button" data-u="salad" style="grid-area:salad">
+          <svg viewBox="0 0 24 180" aria-hidden="true" fill="#fff" stroke="currentColor" stroke-width="2"><use href="#sym-fork" width="24" height="180"/></svg>
+          Outer fork
+        </button>
+        <button class="utensil" type="button" data-u="dinnerfork" style="grid-area:dinnerfork">
+          <svg viewBox="0 0 24 180" aria-hidden="true" fill="#fff" stroke="currentColor" stroke-width="2"><use href="#sym-fork" width="24" height="180"/></svg>
+          Inner fork
+        </button>
+        <div class="game-plate" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="#fff" stroke="#8a6a3c" stroke-width="2"/><circle cx="60" cy="60" r="38" fill="#f3e6e8" stroke="#a35a68" stroke-width="2"/></svg>
+        </div>
+        <button class="utensil" type="button" data-u="knife" style="grid-area:knife">
+          <svg viewBox="0 0 20 180" aria-hidden="true" fill="#fff" stroke="currentColor" stroke-width="2"><use href="#sym-knife" width="20" height="180"/></svg>
+          Knife
+        </button>
+        <button class="utensil" type="button" data-u="soup" style="grid-area:soup">
+          <svg viewBox="0 0 24 180" aria-hidden="true" fill="#fff" stroke="currentColor" stroke-width="2"><use href="#sym-spoon" width="24" height="180"/></svg>
+          Outer spoon
+        </button>
+      </div>
+
+      <div class="feedback" id="game-feedback" aria-live="polite"></div>
+      <p id="game-score" class="center" style="margin-inline:auto">Score: 0</p>
+      <button class="btn btn--ghost btn--small" type="button" id="game-restart" hidden>Play again</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="rest-title">
+  <div class="wrap">
+    <div class="rest-demo">
+      <svg class="rest-svg is-pause" id="rest-svg" viewBox="0 0 300 220" role="img" aria-labelledby="rest-svg-title">
+        <title id="rest-svg-title">Plate with fork and knife crossed in the pause position</title>
+        <circle cx="150" cy="110" r="100" fill="#fff" stroke="#8a6a3c" stroke-width="2"/>
+        <circle cx="150" cy="110" r="74" fill="#f3e6e8" stroke="#d9c9a8" stroke-width="2"/>
+        <g fill="#fff" stroke="#6b1e2e" stroke-width="2">
+          <use class="u u-knife" href="#sym-knife" x="140" y="20" width="20" height="180"/>
+          <use class="u u-fork" href="#sym-fork" x="138" y="20" width="24" height="180"/>
+        </g>
+      </svg>
+      <div>
+        <span class="kicker">Silent signals</span>
+        <h2 id="rest-title">Pausing or finished?</h2>
+        <p>Your cutlery tells the server what to do, without a word.</p>
+        <div class="toggle-group" role="group" aria-label="Cutlery position">
+          <button type="button" aria-pressed="true" data-rest="pause">Pausing</button>
+          <button type="button" aria-pressed="false" data-rest="done">Finished</button>
+        </div>
+        <p id="rest-text" aria-live="polite"><strong>Pausing:</strong> rest the fork and knife crossed on the plate, never on the tablecloth.</p>
+        <span class="source">Source: Carreño (1853), "De la mesa"; Emily Post Institute.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" aria-labelledby="flip-title">
+  <div class="wrap">
+    <div class="section-head center">
+      <h2 id="flip-title">Quick fixes for awkward moments</h2>
+      <p>Tap a card to see the answer.</p>
+    </div>
+    <div class="flip-grid">
+      <div class="flip"><button class="flip-btn" type="button">
+        <span class="flip-face flip-front"><span class="flip-label">Oops</span><span class="flip-title">My neighbor is using my bread plate.</span><span class="flip-hint">Tap to flip ↻</span></span>
+        <span class="flip-face flip-back"><span class="flip-label">Fix</span><span class="flip-text">Say nothing. Place your bread on the rim of your dinner plate and carry on. Keeping your guest comfortable matters more than the rule.</span></span>
+      </button></div>
+      <div class="flip"><button class="flip-btn" type="button">
+        <span class="flip-face flip-front"><span class="flip-label">Oops</span><span class="flip-title">I dropped my fork.</span><span class="flip-hint">Tap to flip ↻</span></span>
+        <span class="flip-face flip-back"><span class="flip-label">Fix</span><span class="flip-text">Leave it on the floor. Quietly ask the server for a new one. Don't wipe it with your napkin.</span></span>
+      </button></div>
+      <div class="flip"><button class="flip-btn" type="button">
+        <span class="flip-face flip-front"><span class="flip-label">Oops</span><span class="flip-title">There's a bone or seed in my mouth.</span><span class="flip-hint">Tap to flip ↻</span></span>
+        <span class="flip-face flip-back"><span class="flip-label">Fix</span><span class="flip-text">Remove it discreetly the way it went in (fork or fingers) and set it on the side of your plate.</span></span>
+      </button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Maître d'</p>
+        <p>Business dining etiquette for University of Arizona students.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="table.html">The Table</a></li>
+          <li><a href="behavior.html">The Meal</a></li>
+          <li><a href="carreno.html">Carreño Rules</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+      <a class="to-top" href="#top">Back to top ↑</a>
+    </div>
+    <p class="footer-small">© <span data-year>2026</span> Maître d' · Created for SIE 515, University of Arizona. Illustrations are original. Not affiliated with or endorsed by the University of Arizona.</p>
+  </div>
+</footer>
+<script src="assets/js/table.js" defer></script>
+</body>
+</html>
