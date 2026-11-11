@@ -173,7 +173,7 @@
     var c = document.createElement("canvas"); c.className = "confetti"; c.setAttribute("aria-hidden", "true");
     document.body.appendChild(c);
     var ctx = c.getContext("2d"), W = c.width = window.innerWidth, H = c.height = window.innerHeight;
-    var colors = ["#6b1e2e", "#b08d57", "#a35a68", "#e8dbc3", "#521624"];
+    var colors = ["#24493a", "#c28a2c", "#4a7560", "#f1e1b9", "#183a2d"];
     var parts = [];
     for (var i = 0; i < 140; i++) parts.push({
       x: W / 2 + (Math.random() - 0.5) * 120, y: H * 0.45, vx: (Math.random() - 0.5) * 14, vy: -Math.random() * 14 - 4,

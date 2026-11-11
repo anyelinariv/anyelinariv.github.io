@@ -314,3 +314,15 @@
     status.textContent = "0 of " + zones.length + " placed";
   });
 })();
+
+/* Clicking a piece of the drawing works like clicking its pin */
+(function () {
+  var svg = document.getElementById("setting-svg");
+  if (!svg) return;
+  svg.querySelectorAll(".item").forEach(function (g) {
+    g.addEventListener("click", function () {
+      var pin = document.querySelector('.hotspot[data-item="' + g.getAttribute("data-item") + '"]');
+      if (pin) pin.click();
+    });
+  });
+})();
