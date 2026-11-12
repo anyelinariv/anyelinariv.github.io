@@ -21,7 +21,7 @@
       hands.classList.remove("is-on"); void hands.offsetWidth;
       hands.classList.toggle("is-on", on);
       hb.setAttribute("aria-pressed", String(on));
-      hb.textContent = on ? "↺ Hide the hand trick" : "✋ Show me the hand trick";
+      hb.querySelector(".hb-text").textContent = on ? "Hide the hand trick" : "Show me the hand trick";
     });
   }
 

@@ -24,7 +24,7 @@
   }
 
   /* ---- Scroll-triggered reveals ---- */
-  var revealables = document.querySelectorAll(".reveal, .reveal-stagger, .draw, .seating-svg");
+  var revealables = document.querySelectorAll(".reveal, .reveal-stagger, .draw, .seating-svg, .rail-anim");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

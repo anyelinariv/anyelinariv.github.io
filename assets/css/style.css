@@ -1050,20 +1050,16 @@ a:hover { color: var(--green-900); }
 .hotspot { background: var(--green); border-color: var(--dijon-200); }
 .hotspot:hover, .hotspot[aria-pressed="true"] { background: var(--dijon-text); }
 
-/* French garnish: floating croissant, baguette, macarons in the home hero */
+/* Brass line-art garnish in the home hero */
 .garnish { position: absolute; z-index: 0; color: var(--dijon); }
 .garnish svg, .garnish img { display: block; width: 100%; height: auto; }
-.garnish--croissant { width: 5.5rem; top: 1.5rem; left: 44%; animation: floatY 6s ease-in-out infinite; }
-.garnish--baguette { width: 11rem; bottom: .5rem; left: 6%; animation: floatY 7s ease-in-out infinite reverse; }
-.garnish--macarons { width: 6rem; bottom: 1.5rem; right: 3%; animation: floatY 5s ease-in-out infinite; }
 .hero .wrap { position: relative; z-index: 1; }
-@media (max-width: 860px) { .garnish--croissant { left: auto; right: 4%; top: .5rem; width: 4rem; } .garnish--baguette, .garnish--macarons { display: none; } }
 
-/* inner-page heroes get a floating croissant on the right */
+/* inner-page heroes get a floating brass cloche on the right */
 .page-hero { position: relative; overflow: hidden; }
 .page-hero::after {
   content: ""; position: absolute; right: 6%; top: 50%; width: 9rem; height: 6rem; margin-top: -3rem;
-  background: url("../img/croissant.svg") center / contain no-repeat; opacity: .9;
+  background: url("../img/cloche.svg") center / contain no-repeat; opacity: .9;
   animation: floatY 6s ease-in-out infinite; pointer-events: none;
 }
 @media (max-width: 760px) { .page-hero::after { width: 5rem; height: 3.4rem; right: 4%; top: 1.4rem; margin-top: 0; opacity: .6; } }
@@ -1303,3 +1299,58 @@ h1 em, h2 em { font-style: italic; font-weight: 600; color: var(--dijon-text); }
 }
 .carousel { overflow-x: clip; padding-bottom: .5rem; }
 @supports not (overflow-x: clip) { .carousel { overflow: hidden; } }
+
+/* =========================================================
+   v5 — refinements
+   ========================================================= */
+/* hero garnish: brass line art only */
+.garnish--glasses { width: 8rem; bottom: 1.6rem; left: 4%; animation: floatY 7s ease-in-out infinite; }
+.garnish--cloche { width: 9rem; bottom: 1.4rem; right: 3.5%; animation: floatY 6s ease-in-out infinite reverse; }
+@media (max-width: 860px) { .garnish--glasses, .garnish--cloche { display: none; } }
+
+/* hand-trick button with a chevron */
+.hb-arrow { width: 1.1rem; height: 1.1rem; transition: transform .35s ease; }
+#hands-btn[aria-pressed="true"] .hb-arrow { transform: rotate(180deg); }
+.btn-arrow { width: 1.1rem; height: 1.1rem; transition: transform .3s ease; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* seven courses: brass medallions on a line */
+.section--courses { background: linear-gradient(180deg, var(--creme), #f3ecda); }
+.courses {
+  list-style: none; margin: 0; padding: 0; position: relative;
+  display: grid; gap: 1.2rem .5rem; grid-template-columns: repeat(7, 1fr);
+}
+.courses::before {
+  content: ""; position: absolute; left: 7%; right: 7%; top: 2.6rem; height: 1px;
+  background: repeating-linear-gradient(90deg, var(--dijon) 0 8px, transparent 8px 14px);
+}
+.courses li { margin: 0; }
+.course { display: flex; flex-direction: column; align-items: center; gap: .35rem; text-decoration: none; color: var(--ink); text-align: center; }
+.course-medal {
+  position: relative; width: 5.2rem; height: 5.2rem; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 35% 30%, #2f5b49, #10281f); color: var(--brass-light);
+  box-shadow: 0 0 0 4px var(--creme), 0 0 0 5px var(--dijon), 0 14px 24px -10px rgba(16,40,31,.6);
+  transition: transform .45s cubic-bezier(.3,1.6,.5,1), box-shadow .3s;
+}
+.course-medal svg { width: 2rem; height: 2rem; }
+.course-num { font: italic 600 .95rem var(--font-display); color: var(--dijon-text); margin-top: .4rem; }
+.course-name { font: 600 1.05rem var(--font-display); color: var(--green); }
+.course:hover .course-medal { transform: translateY(-6px) rotate(-8deg) scale(1.06); box-shadow: 0 0 0 4px var(--creme), 0 0 0 5px var(--dijon), 0 22px 30px -12px rgba(16,40,31,.7); }
+.course:hover .course-name { color: var(--green-900); text-decoration: underline; text-decoration-color: var(--dijon); text-underline-offset: .25em; }
+@media (max-width: 900px) {
+  .courses { grid-template-columns: repeat(4, 1fr); }
+  .courses::before { display: none; }
+}
+@media (max-width: 520px) { .courses { grid-template-columns: repeat(2, 1fr); } }
+
+/* illustrated flip-card fronts */
+.flip-front.has-art { align-items: flex-start; }
+.flip-art { width: 5.6rem; height: 5.6rem; overflow: visible; filter: drop-shadow(0 6px 8px rgba(34,38,31,.15)); margin-bottom: .2rem; transition: transform .6s cubic-bezier(.3,1.4,.5,1); }
+.flip:has(.has-art) { min-height: 18rem; }
+.flip:has(.has-art) .flip-btn { min-height: 18rem; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .flip:hover .flip-art { transform: perspective(500px) rotateY(-20deg) rotateX(8deg) translateY(-4px) scale(1.08); }
+}
+
+/* footer without the link menu */
+.footer-grid { grid-template-columns: 1fr auto !important; align-items: center; }
