@@ -75,6 +75,7 @@
       </div>
     </div>
 
+    <div class="table3d" id="table3d">
     <svg class="hero-art draw" viewBox="0 0 480 340" role="img" aria-labelledby="hero-title hero-desc">
       <title id="hero-title">Line drawing of a formal place setting</title>
       <desc id="hero-desc">Seen from above: a place card, a bread plate at upper left, two forks on the left, a steaming soup bowl on a dinner plate in the center, a knife and spoon on the right, and two glasses at upper right.</desc>
@@ -124,11 +125,16 @@
         </g>
       </g>
     </svg>
+    <span class="table3d-cloth" aria-hidden="true"></span>
+    </div>
   </div>
   <a class="scroll-cue" href="#ideas-title" aria-label="Scroll to the four big ideas">
     <svg viewBox="0 0 24 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="32" rx="10"/><circle class="dot" cx="12" cy="11" r="2.5" fill="currentColor" stroke="none"/></svg>
   </a>
 </section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-row"><span>Napkin on your lap</span><span class="mq-star">✦</span><span>Bread left, water right</span><span class="mq-star">✦</span><span>Outside in</span><span class="mq-star">✦</span><span>Phone away</span><span class="mq-star">✦</span><span>Small bites</span><span class="mq-star">✦</span><span>Follow the host</span><span class="mq-star">✦</span><span>Thank-you within 24 h</span><span class="mq-star">✦</span><span>Bon appétit</span><span class="mq-star">✦</span></div><div class="marquee-row"><span>Napkin on your lap</span><span class="mq-star">✦</span><span>Bread left, water right</span><span class="mq-star">✦</span><span>Outside in</span><span class="mq-star">✦</span><span>Phone away</span><span class="mq-star">✦</span><span>Small bites</span><span class="mq-star">✦</span><span>Follow the host</span><span class="mq-star">✦</span><span>Thank-you within 24 h</span><span class="mq-star">✦</span><span>Bon appétit</span><span class="mq-star">✦</span></div></div></div>
+
 
 <section class="section section--paper" aria-labelledby="ideas-title">
   <div class="wrap">
@@ -328,23 +334,17 @@
     <div class="section-head center">
       <h2 id="numbers-title">The meal by the numbers</h2>
     </div>
-    <div class="stats reveal-stagger">
-      <div class="stat tilt">
-        <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>
-        <span class="stat-num"><span data-count="10" data-before="5–">5–10</span></span><span class="stat-label">minutes early</span>
-      </div>
-      <div class="stat tilt">
-        <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3h10l-1 8a4 4 0 0 1-8 0zM12 15v5M8 21h8"/></svg>
-        <span class="stat-num"><span data-count="1">1</span></span><span class="stat-label">drink max, if the host drinks</span>
-      </div>
-      <div class="stat tilt">
-        <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M3 3l18 18"/></svg>
-        <span class="stat-num">0</span><span class="stat-label">phones on the table</span>
-      </div>
-      <div class="stat tilt">
-        <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
-        <span class="stat-num"><span data-count="24" data-after=" h">24 h</span></span><span class="stat-label">to send your thank-you</span>
-      </div>
+    <div class="carte tilt reveal">
+      <p class="carte-title">À la carte</p>
+      <p class="carte-sub">The evening, in numbers</p>
+      <ul class="carte-list">
+          <li><span class="carte-item">Arrive early</span><span class="carte-dots" aria-hidden="true"></span><span class="carte-val"><span data-count="10" data-before="5–">5–10</span> min</span></li>
+          <li><span class="carte-item">Drinks, only if the host orders</span><span class="carte-dots" aria-hidden="true"></span><span class="carte-val"><span data-count="1">1</span> max</span></li>
+          <li><span class="carte-item">Phones on the table</span><span class="carte-dots" aria-hidden="true"></span><span class="carte-val">0</span></li>
+          <li><span class="carte-item">Thank-you email</span><span class="carte-dots" aria-hidden="true"></span><span class="carte-val"><span data-count="24">24</span> h</span></li>
+          <li><span class="carte-item">Tip when you host</span><span class="carte-dots" aria-hidden="true"></span><span class="carte-val"><span data-count="20" data-before="18–">18–20</span>%</span></li>
+      </ul>
+      <p class="carte-foot">✦ Service compris ✦</p>
     </div>
     <span class="source center">Sources: Emily Post Institute; Virginia Tech Career and Professional Development. See <a href="references.html">References</a>.</span>
   </div>
@@ -397,6 +397,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
+    <p class="footer-mega" aria-hidden="true">Bon <em>appétit.</em></p>
     <div class="footer-grid">
       <div>
         <p class="footer-brand">Maître d'</p>
