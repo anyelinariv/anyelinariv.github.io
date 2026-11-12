@@ -42,6 +42,26 @@
 </header>
 
 <main id="main" tabindex="-1">
+<!-- Shared gradients for the 3D-style icons and dishes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g3-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f8068"/><stop offset="1" stop-color="#183a2d"/></linearGradient>
+    <linearGradient id="g3-cream" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e6d6b0"/></linearGradient>
+    <linearGradient id="g3-cream2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4e8cc"/><stop offset="1" stop-color="#d8c393"/></linearGradient>
+    <linearGradient id="g3-brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d690"/><stop offset=".5" stop-color="#c28a2c"/><stop offset="1" stop-color="#8a5a12"/></linearGradient>
+    <radialGradient id="g3-plate" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#f3ede0"/><stop offset="1" stop-color="#d9cfb8"/></radialGradient>
+    <linearGradient id="g3-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d6ccb4"/></linearGradient>
+    <radialGradient id="g3-wine" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#c4545c"/><stop offset="1" stop-color="#6e1d24"/></radialGradient>
+    <radialGradient id="g3-shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#22261f" stop-opacity=".35"/><stop offset="1" stop-color="#22261f" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g3-chicken" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8b06a"/><stop offset="1" stop-color="#9a5a20"/></linearGradient>
+    <linearGradient id="g3-pasta" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8e19a"/><stop offset="1" stop-color="#d6a640"/></linearGradient>
+    <radialGradient id="g3-red" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#e2664f"/><stop offset="1" stop-color="#9b2c22"/></radialGradient>
+    <linearGradient id="g3-leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a7d17f"/><stop offset="1" stop-color="#3f7a3a"/></linearGradient>
+    <linearGradient id="g3-salmon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8b08a"/><stop offset="1" stop-color="#d0603e"/></linearGradient>
+    <radialGradient id="g3-lemon" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff3a0"/><stop offset="1" stop-color="#e2b21c"/></radialGradient>
+    <linearGradient id="g3-soup" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3cf7a"/><stop offset="1" stop-color="#b9772a"/></linearGradient>
+  </defs>
+</svg>
 
 <section class="page-hero">
   <div class="wrap">
@@ -277,15 +297,15 @@
     </div>
     <div class="flip-grid">
       <div class="flip"><button class="flip-btn" type="button">
-        <span class="flip-face flip-front"><span class="flip-label">Situation</span><span class="flip-title">Your phone buzzes. You check it under the table.</span><span class="flip-hint">Tap to flip ↻</span></span>
+        <span class="flip-face flip-front has-art"><svg class="flip-art" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="58" rx="22" ry="3.5" fill="url(#g3-shadow)"/><g class="ia-wiggle"><rect x="20" y="8" width="24" height="44" rx="5" fill="url(#g3-green)"/><rect x="23" y="13" width="18" height="32" rx="2" fill="#10281f"/><circle cx="32" cy="48" r="1.8" fill="#c9dccf"/><rect x="25" y="16" width="3" height="18" rx="1.5" fill="#fff" opacity=".25"/></g><path d="M12 22q-4 8 0 16M8 18q-6 12 0 24M52 22q4 8 0 16M56 18q6 12 0 24" stroke="#c28a2c" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><span class="flip-label">Situation</span><span class="flip-title">Your phone buzzes. You check it under the table.</span><span class="flip-hint">Tap to flip ↻</span></span>
         <span class="flip-face flip-back"><span class="flip-label">✗ Don't</span><span class="flip-text">Everyone notices. If you truly must take a call, excuse yourself and step away.</span></span>
       </button></div>
       <div class="flip"><button class="flip-btn" type="button">
-        <span class="flip-face flip-front"><span class="flip-label">Situation</span><span class="flip-title">You order the steak because the company is paying.</span><span class="flip-hint">Tap to flip ↻</span></span>
+        <span class="flip-face flip-front has-art"><svg class="flip-art" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="58" rx="22" ry="3.5" fill="url(#g3-shadow)"/><ellipse cx="30" cy="40" rx="22" ry="9" fill="url(#g3-rim)"/><path d="M14 36q2-12 16-12t18 8q-2 10-18 10t-16-6z" fill="url(#g3-red)"/><path d="M20 32l6 6M28 30l6 7M36 30l5 6" stroke="#6e1d24" stroke-width="2" stroke-linecap="round" opacity=".7"/><circle cx="48" cy="18" r="10" fill="url(#g3-brass)"/><text x="48" y="22.5" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="13" fill="#fffdf7">$</text></svg><span class="flip-label">Situation</span><span class="flip-title">You order the steak because the company is paying.</span><span class="flip-hint">Tap to flip ↻</span></span>
         <span class="flip-face flip-back"><span class="flip-label">✗ Don't</span><span class="flip-text">Pick a mid-priced dish, or ask the host what they recommend.</span></span>
       </button></div>
       <div class="flip"><button class="flip-btn" type="button">
-        <span class="flip-face flip-front"><span class="flip-label">Situation</span><span class="flip-title">You thank the server each time they bring something.</span><span class="flip-hint">Tap to flip ↻</span></span>
+        <span class="flip-face flip-front has-art"><svg class="flip-art" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="58" rx="22" ry="3.5" fill="url(#g3-shadow)"/><path d="M12 44a20 20 0 0 1 40 0z" fill="url(#g3-brass)"/><rect x="8" y="44" width="48" height="5" rx="2.5" fill="url(#g3-brass)"/><circle cx="32" cy="21" r="3.5" fill="url(#g3-brass)"/><path d="M20 38a13 13 0 0 1 8-10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".6"/><path d="M50 14c-2-3-6-1-4 2l4 4 4-4c2-3-2-5-4-2z" fill="url(#g3-wine)"/></svg><span class="flip-label">Situation</span><span class="flip-title">You thank the server each time they bring something.</span><span class="flip-hint">Tap to flip ↻</span></span>
         <span class="flip-face flip-back"><span class="flip-label">✓ Do</span><span class="flip-text">Recruiters notice how you treat staff. A quiet "thank you" says a lot.</span></span>
       </button></div>
     </div>
@@ -311,16 +331,6 @@
         <p class="footer-brand">Maître d'</p>
         <p>Business dining etiquette for University of Arizona students.</p>
       </div>
-      <nav aria-label="Footer">
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="table.html">The Table</a></li>
-          <li><a href="behavior.html">The Meal</a></li>
-          <li><a href="carreno.html">Carreño Rules</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="references.html">References</a></li>
-        </ul>
-      </nav>
       <a class="to-top" href="#top">Back to top ↑</a>
     </div>
     <p class="footer-small">© <span data-year>2026</span> Maître d' · Created for SIE 515, University of Arizona. Illustrations are original. Not affiliated with or endorsed by the University of Arizona.</p>
